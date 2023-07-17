@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import CityCard from "../components/CityCard/CityCard";
+import { ThemeContext } from "../Context/Context";
+import { useContext } from "react";
 import "./HomePage.css";
 import Header from "../components/Header/Header";
 
@@ -7,6 +9,7 @@ const HomePage = () => {
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null);
   const [userLocation, setUserLocation] = useState("");
+  const { theme, setTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -44,14 +47,16 @@ const HomePage = () => {
           <article className="city-cards-gallery">
             <CityCard
               name={userLocation.name}
-              temp={`${Math.round(userLocation.main.temp - 273.15)}C°`}
+              temp={`${Math.round(userLocation.main.temp - 273.15)}°`}
               img={`https://openweathermap.org/img/wn/${userLocation.weather[0].icon}@2x.png`}
               description={userLocation.weather[0].description}
               wind={userLocation.wind.speed}
             />
           </article>
         ) : (
-          <h1>Lädt</h1>
+          <>
+            <span class={theme ? "loader-light" : "loader-dark"}></span>
+          </>
         )}
       </section>
     </>

@@ -1,6 +1,7 @@
 import "./Header.css";
-import { ThemeContext } from "../../context/Context.jsx";
+import { ThemeContext } from "../../Context/Context";
 import { useContext } from "react";
+import DarkLightIcon from "../../assets/DarkLightIcon/DarkLightIcon";
 
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -10,7 +11,9 @@ const Header = () => {
   };
   return (
     <header className="header">
-      <div onClick={themeToggle}>Mode</div>
+      <div onClick={themeToggle}>
+        <DarkLightIcon />
+      </div>
     </header>
   );
 };

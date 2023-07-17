@@ -1,13 +1,16 @@
 .header {
-  width: 90%;
-  height: 5rem;
+  width: 10rem;
+  height: 8rem;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .header div {
-  width: 4rem;
-  height: 4rem;
-  border: 1px solid black;
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

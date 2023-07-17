@@ -1,6 +1,6 @@
 import "./App.css";
 import HomePage from "./pages/HomePage";
-import { ThemeContext } from "./context/Context";
+import { ThemeContext } from "./Context/Context";
 import { useState } from "react";
 
 function App() {
