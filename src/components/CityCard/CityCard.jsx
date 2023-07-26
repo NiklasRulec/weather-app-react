@@ -12,7 +12,7 @@ const CityCard = (props) => {
         <h3>Wind</h3>
         <div>
           <WindIcon />
-          <h3>{props.wind} km/h</h3>
+          <h3>{props.wind} m/s</h3>
         </div>
       </div>
     </article>

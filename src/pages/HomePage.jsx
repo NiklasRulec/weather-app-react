@@ -4,6 +4,8 @@ import { ThemeContext } from "../Context/Context";
 import { useContext } from "react";
 import "./HomePage.css";
 import Header from "../components/Header/Header";
+import CityScrollList from "../components/CityScrollList/CityScrollList";
+import CitySearch from "../components/CitySearch/CitySearch";
 
 const HomePage = () => {
   const [lat, setLat] = useState(null);
@@ -44,18 +46,22 @@ const HomePage = () => {
       <Header />
       <section className="home-section">
         {userLocation.name ? (
-          <article className="city-cards-gallery">
-            <CityCard
-              name={userLocation.name}
-              temp={`${Math.round(userLocation.main.temp - 273.15)}°`}
-              img={`https://openweathermap.org/img/wn/${userLocation.weather[0].icon}@2x.png`}
-              description={userLocation.weather[0].description}
-              wind={userLocation.wind.speed}
-            />
-          </article>
+          <>
+            <article className="city-cards-gallery">
+              <CityCard
+                name={userLocation.name}
+                temp={`${Math.round(userLocation.main.temp - 273.15)}°`}
+                img={`https://openweathermap.org/img/wn/${userLocation.weather[0].icon}@2x.png`}
+                description={userLocation.weather[0].description}
+                wind={userLocation.wind.speed}
+              />
+            </article>
+            <CitySearch />
+            <CityScrollList />
+          </>
         ) : (
           <>
-            <span class={theme ? "loader-light" : "loader-dark"}></span>
+            <span className={theme ? "loader-light" : "loader-dark"}></span>
           </>
         )}
       </section>

@@ -1,6 +1,6 @@
 .city-card {
   width: 30rem;
-  min-height: 80vh;
+  min-height: 50vh;
   padding: 1rem;
   margin: 1rem;
   border-radius: 1rem;
@@ -8,12 +8,15 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+}
+
+.city-card h2 {
   text-transform: capitalize;
 }
 
 .city-card h1,
 .city-card h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .city-card img {
@@ -35,5 +38,5 @@
   height: 10rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }

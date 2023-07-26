@@ -1,0 +1,15 @@
+.city-scroll-list-container {
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.city-scroll-list {
+  width: 100%;
+  height: 10rem;
+  overflow-x: scroll;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
