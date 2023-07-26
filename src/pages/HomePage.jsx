@@ -56,8 +56,8 @@ const HomePage = () => {
                 wind={userLocation.wind.speed}
               />
             </article>
-            <CitySearch />
-            <CityScrollList />
+            {/* <CitySearch />
+            <CityScrollList /> */}
           </>
         ) : (
           <>

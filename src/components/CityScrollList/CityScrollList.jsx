@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { CityListContext } from "../../Context/Context";
 import "./CityScrollList.css";
 import SmallCityCard from "../SmallCityCard/SmallCityCard";
+import { Link } from "react-router-dom";
 
 const CityScrollList = () => {
   const { cityList } = useContext(CityListContext);
