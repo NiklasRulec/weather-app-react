@@ -1,33 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { CityListContext } from "../../Context/Context";
+import { CityListContext, UserLat, UserLon } from "../../Context/Context";
 import "./CityScrollList.css";
 import CityCard from "../CityCard/CityCard";
 
 const CityScrollList = () => {
-  const [lat, setLat] = useState(null);
-  const [lon, setLon] = useState(null);
+  const { lat, setLat } = useContext(UserLat);
+  const { lon, setLon } = useContext(UserLon);
   const [userLocation, setUserLocation] = useState("");
   const { cityList } = useContext(CityListContext);
 
   useEffect(() => {
     console.log(cityList);
   }, [cityList]);
-
-  useEffect(() => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLat(position.coords.latitude);
-          setLon(position.coords.longitude);
-        },
-        (error) => {
-          console.error("Fehler bei der Geolocation: " + error.message);
-        }
-      );
-    } else {
-      console.log("Geolocation wird nicht unterstützt");
-    }
-  }, []);
 
   useEffect(() => {
     const key = "42eddcbffea9c0c9660d5c4b95553b15";
