@@ -30,13 +30,13 @@ const CityScrollList = () => {
       <div className="city-scroll-list">
         {userLocation ? (
           <>
-            <CityCard
+            {/* <CityCard
               name={userLocation.name}
               temp={`${Math.round(userLocation.main.temp - 273.15)}°`}
               img={`https://openweathermap.org/img/wn/${userLocation.weather[0].icon}@2x.png`}
               description={userLocation.weather[0].description}
               wind={userLocation.wind.speed}
-            />
+            /> */}
             {cityList.map((city, index) => (
               <CityCard
                 key={index}

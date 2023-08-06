@@ -11,9 +11,9 @@ const HomePage = () => {
 
   return (
     <>
-      <Header />
-      <CitySearch />
       <section className="home-section">
+        <Header />
+        <CitySearch />
         {cityList ? (
           <>
             <CityScrollList />

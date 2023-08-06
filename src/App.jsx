@@ -20,6 +20,8 @@ function App() {
         (position) => {
           setLat(position.coords.latitude);
           setLon(position.coords.longitude);
+          localStorage.setItem("Lat", lat);
+          localStorage.setItem("Lon", lon);
         },
         (error) => {
           console.error("Fehler bei der Geolocation: " + error.message);
