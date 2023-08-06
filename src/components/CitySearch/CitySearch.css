@@ -1,11 +1,14 @@
 .city-search {
-  width: 40rem;
+  max-width: 40rem;
   height: 5rem;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .city-search form {
-  width: 100%;
+  width: 90%;
   height: 5rem;
   display: flex;
   align-items: center;

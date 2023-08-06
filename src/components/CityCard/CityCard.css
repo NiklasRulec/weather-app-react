@@ -1,9 +1,10 @@
 .city-card {
-  width: 30rem;
+  width: 40rem;
   min-height: 50vh;
   padding: 1rem;
   margin: 1rem;
   border-radius: 1rem;
+  box-shadow: var(--lightshadow);
   display: flex;
   align-items: center;
   justify-content: flex-start;
