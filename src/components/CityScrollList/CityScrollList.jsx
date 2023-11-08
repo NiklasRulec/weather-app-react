@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { CityListContext, UserLat, UserLon } from "../../Context/Context";
 import "./CityScrollList.css";
 import CityCard from "../CityCard/CityCard";
+require("dotenv").config();
 
 const CityScrollList = () => {
   const { lat, setLat } = useContext(UserLat);
@@ -14,9 +15,9 @@ const CityScrollList = () => {
   }, [cityList]);
 
   useEffect(() => {
-    const key = "42eddcbffea9c0c9660d5c4b95553b15";
+    const apiKey = process.env.API_KEY;
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
     )
       .then((res) => res.json())
       .then((data) => {
