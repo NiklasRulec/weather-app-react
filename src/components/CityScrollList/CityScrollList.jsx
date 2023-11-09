@@ -14,7 +14,7 @@ const CityScrollList = () => {
   }, [cityList]);
 
   useEffect(() => {
-    const apiKey = import.meta.env.API;
+    const apiKey = "42eddcbffea9c0c9660d5c4b95553b15";
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
     )
@@ -30,13 +30,13 @@ const CityScrollList = () => {
       <div className="city-scroll-list">
         {userLocation ? (
           <>
-            <CityCard
+            {/* <CityCard
               name={userLocation.name}
-              temp={`${Math.round(userLocation?.main.temp - 273.15)}°`}
+              temp={`${Math.round(userLocation.main?.temp - 273.15)}°`}
               img={`https://openweathermap.org/img/wn/${userLocation.weather[0].icon}@2x.png`}
               description={userLocation.weather[0].description}
               wind={userLocation.wind.speed}
-            />
+            /> */}
             {cityList.map((city, index) => (
               <CityCard
                 key={index}

@@ -14,23 +14,23 @@ function App() {
   const [lat, setLat] = useState();
   const [lon, setLon] = useState();
 
-  useEffect(() => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLat(position.coords.latitude);
-          setLon(position.coords.longitude);
-          localStorage.setItem("Lat", position.coords.latitude);
-          localStorage.setItem("Lon", position.coords.longitude);
-        },
-        (error) => {
-          console.error("Fehler bei der Geolocation: " + error.message);
-        }
-      );
-    } else {
-      console.log("Geolocation wird nicht unterstützt");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if ("geolocation" in navigator) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         setLat(position.coords.latitude);
+  //         setLon(position.coords.longitude);
+  //         localStorage.setItem("Lat", position.coords.latitude);
+  //         localStorage.setItem("Lon", position.coords.longitude);
+  //       },
+  //       (error) => {
+  //         console.error("Fehler bei der Geolocation: " + error.message);
+  //       }
+  //     );
+  //   } else {
+  //     console.log("Geolocation wird nicht unterstützt");
+  //   }
+  // }, []);
 
   return (
     <>
