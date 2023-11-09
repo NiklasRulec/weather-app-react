@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { CityListContext, UserLat, UserLon } from "../../Context/Context";
 import "./CityScrollList.css";
 import CityCard from "../CityCard/CityCard";
-require("dotenv").config();
 
 const CityScrollList = () => {
   const { lat, setLat } = useContext(UserLat);
@@ -15,7 +14,7 @@ const CityScrollList = () => {
   }, [cityList]);
 
   useEffect(() => {
-    const apiKey = process.env.API_KEY;
+    const apiKey = import.meta.env.API;
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
     )
@@ -31,13 +30,13 @@ const CityScrollList = () => {
       <div className="city-scroll-list">
         {userLocation ? (
           <>
-            {/* <CityCard
+            <CityCard
               name={userLocation.name}
-              temp={`${Math.round(userLocation.main.temp - 273.15)}°`}
+              temp={`${Math.round(userLocation?.main.temp - 273.15)}°`}
               img={`https://openweathermap.org/img/wn/${userLocation.weather[0].icon}@2x.png`}
               description={userLocation.weather[0].description}
               wind={userLocation.wind.speed}
-            /> */}
+            />
             {cityList.map((city, index) => (
               <CityCard
                 key={index}

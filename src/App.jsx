@@ -6,7 +6,7 @@ import {
   UserLat,
   UserLon,
 } from "./Context/Context";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -20,8 +20,8 @@ function App() {
         (position) => {
           setLat(position.coords.latitude);
           setLon(position.coords.longitude);
-          localStorage.setItem("Lat", lat);
-          localStorage.setItem("Lon", lon);
+          localStorage.setItem("Lat", position.coords.latitude);
+          localStorage.setItem("Lon", position.coords.longitude);
         },
         (error) => {
           console.error("Fehler bei der Geolocation: " + error.message);
